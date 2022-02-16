@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+ {% load qr_code %}
+</head>
+<body>
+
+
+<img src="{% qr_url_from_text " http://127.0.0.1:8000/form_add/" size=18 version=20 error_correction="Q" cache_enabled=False %}" alt="Hello World!">
+</body>
+</html>

@@ -1,0 +1,80 @@
+{% extends "../index.html" %}
+{% block content %}
+{% load static %}
+  <!-- Daterange picker -->
+
+
+
+<body class="hold-transition sidebar-mini" xmlns="http://www.w3.org/1999/html">
+    <div class="content-wrapper">
+      <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-4">
+          </div>
+            <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Reservas</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+        <div class="container p-1">
+             <form action="" method="POST" enctype="multipart/form-data" >{% csrf_token %}
+                 {% if form1.errors %}
+                    <p>{{ form1.errors}}</p>
+                 {% endif %}
+                <div class="card card-default ">
+                    <div class="card-header">
+                        <h3 class="card-title">Cargar Clase </h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                  <!-- /.card-header -->
+                      <div class="card-body">
+                          <div class="row">
+                          <!-- /.col -->
+
+                          </div>
+                          <div class="form-group col-4">
+                                        <label>Propietario:</label>
+                                <div><input type="text" id="propietario" name="propietario" value=""   max=""></div>
+                          </div>
+                              <div class="form-group col-2">
+                                        <label>Mz:</label>
+                                <div><input type="number" id="mz" name="mz" value=""   max=""></div>
+                              </div>
+                              <div class="form-group col-2">
+                                        <label>Lt:</label>
+                                <div><input type="number" id="lt" name="lt" value=""   max=""></div>
+                              </div>
+                          <div class="form-group col-2">
+                                        <label>Cant. Clases:</label>
+                                <div><input type="number" id="cant" name="cant" value=""   max=""></div>
+                              </div>
+                          <div class="form-group col-4">
+                                        <label>Observacion:</label>
+                                <div><input type="text" id="Usuario" name="Usuario" value=""   max=""></div>
+                          </div>
+                      </div>
+                     <small> Se facturara la clase en la expensa  del club</small>
+                </div>
+
+        <!-- /.card -->
+                <button type="submit" id="boton" class="btn btn-secondary">Save </button>
+                <a class="btn btn-danger" href="/reservas_list"> Cancel </a>
+            </form>
+          </div>
+        </div>
+    </div>
+<script src="{% static '/JS/Deposit/Deposit.js'%}"></script>
+
+</body>
+
+
+{% endblock%}
